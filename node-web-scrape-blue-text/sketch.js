@@ -10,6 +10,7 @@ function preload() {
 
 function setup() {
   createCanvas(500, 500);
+  canvas.parent("sketch-container"); //move our canvas inside this HTML element
   background(0);
   let wordData = data.content.text[floor(random(0, 200))];
   console.log(wordData);
