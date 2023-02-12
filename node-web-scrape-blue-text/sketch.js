@@ -5,13 +5,13 @@ let words =[]
 let wordData;
 
 function preload() {
-  data = loadJSON('./json/WebScraping.json')
+  data = loadJSON('./json/webScraping.json')
 }
 
 function setup() {
   createCanvas(500, 500);
   background(0);
-  let wordData = data.content.text[floor(random(0, 200))];
+  let wordData = data.content.text[floor(random(0, 20))];
   console.log(wordData);
   blueFact = wordData;
 
