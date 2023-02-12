@@ -22,6 +22,7 @@ function setup() {
 function draw() {
   textAlign(CENTER);
   image(img,0,0,500,500);
-  textSize(map(blueFact.length,0,200,30,20,true));
+  textSize(20);
+  //textSize(map(blueFact.length,0,200,30,20,true));
   text(blueFact, 50, 150, 400);
 }
