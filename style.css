@@ -4,4 +4,11 @@ html, body {
 }
 canvas {
   display: block;
+  margin: auto;
+  padding: 10px;
+}
+
+h1{
+  margin: auto;
+  text-align: center;
 }
