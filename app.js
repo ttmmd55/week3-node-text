@@ -15,11 +15,18 @@ to scrape another site you should go and inspect the site in the browser first, 
 function getParagraphText(soupTag){
     let paragraphs = soupTag.findAll('p');
     let text = '';
-    for(let i = 0; i < paragraphs.length; i++){
-        text += paragraphs[i].getText();
-    }
+    let sentence = [];
 
-    return text;
+    for(let i = 0; i < paragraphs.length; i++){
+    
+        let p = paragraphs[i].getText().toLowerCase(); 
+        if(p.indexOf("blue") != -1){ //if text has blue
+        console.log(p);
+        text += p;
+        sentence = text.split('. ')
+        }
+    }
+    return sentence;
 }
 
 //pass in Plain Old Javascript Object that's formatted as JSON
@@ -43,11 +50,12 @@ function createSoup(document){
         "content": {}
     }; 
 
-    let main = soup.find('main');//only get the content from the main body of the page
+    let main= soup.find('main');//only get the content from the main body of the page
 
     data.content = {
         "text": getParagraphText(main)
     };
+        
         
     //output json
     writeJSON(data);
